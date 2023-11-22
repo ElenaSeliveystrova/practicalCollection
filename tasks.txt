@@ -1,0 +1,117 @@
+Task 1
+
+These tasks are based on the basic methods of the String class. To solve them, you can choose 4 points. Demonstrate the correctness of the created methods.
+
+1. Write a method that takes two strings and returns true if they are equal, and false otherwise. Consider the possibility of case-sensitive and case-insensitive comparison.
+
+2. Implement a method that takes a string and two indices, and returns the substring that is contained between those indices.
+
+3. Create a method that checks whether a certain substring is contained in a given string, and returns the index of its first occurrence.
+
+4. Write a method that replaces all occurrences of one substring with another in a given string.
+
+5. Implement a method that determines whether a string contains digits, and returns true or false accordingly.
+
+6. Write a method that removes all leading and trailing spaces from a string.
+
+7. Create a method that splits a string into an array of substrings according to a given delimiter.
+
+Task 2
+
+Create a class Rectangle to represent a rectangle. The class should have the following fields:
+
+width: the width of the rectangle, of type double.
+height: the height of the rectangle, of type double.
+angle: the angle between the sides, of type double. The angle is always 90 degrees.
+The class should have the following constructors:
+
+A default constructor that initializes all fields to their default values.
+A constructor that takes the width and height.
+The class should have the following getters and setters:
+
+For each field of the class, a getter should be created that returns the current value of the field.
+For each field of the class, a setter should be created that sets a new value for the field.
+Task:
+
+Implement the Rectangle class according to the problem statement.
+
+Additional requirements:
+
+The class should be encapsulated.
+The class should be tested.
+Methods that can be implemented in the Rectangle class:
+
+A method calculateArea() that calculates the area of the rectangle.
+A method calculatePerimeter() that calculates the perimeter of the rectangle.
+A method getDiagonal() that returns the length of the diagonal of the rectangle.
+Demonstrate the correctness of the created methods.
+
+Task 3
+Analysis of a Collection of Numbers
+
+Create an ArrayList that will store integers (Integer). Fill the collection with 20 random numbers from 1 to 100. Use the Random class to generate random numbers.
+
+1. Print all elements of the collection to the console.
+
+2. Find and print the minimum and maximum numbers in the collection.
+
+3. Calculate and print the average value of the numbers in the collection.
+
+4. Remove all even numbers from the collection, and then print the updated collection to the console.
+
+5. Check if the collection contains a given number (for example, 50), and print the result to the console.
+
+6. Sort the collection in ascending order and print the sorted collection to the console.
+
+
+Task 4
+Operations with a Book Collection
+
+Book Class Structure:
+
+Fields: title (title), author (author), genre (genre), year (publication year).
+Constructors: To initialize a book with all fields.
+Getters/Setters: For accessing and modifying fields.
+Task Description:
+
+1. Print List of Authors:
+
+Print the list of all authors in the collection to the console.
+2. List Authors by Genre:
+
+Print the list of authors who have written books in a given genre.
+3. List Authors by Publication Year:
+
+Print the list of authors whose books were published in a given year.
+4. Find Book by Author:
+
+Find a book in the collection written by a given author.
+5. Find Books by Publication Year:
+
+Find all books that were written in a given year.
+6. Find Books by Genre:
+
+Find all books that belong to a given genre.
+7. Remove Books by Author:
+
+Remove from the collection all books written by a given author.
+8. Sort Collection by Criterion:
+
+Sort the book collection by a given criterion (e.g., title, author, or year of publication).
+9. Merge Book Collections:
+
+Combine two book collections into one.
+10. Subcollection of Books by Genre:
+
+Create a subcollection of books from a given genre.
+
+
+Implementation Recommendations:
+
+Use ArrayList to store the book collection.
+For sorting,  you can use Collections.sort() or stream methods with an appropriate comparator.
+
+JUnit
+Implement unit tests to check the functionality of Java Core 2 homework tasks. Add unit tests to a homework project:
+Task 3. Analysis of a Collection of Numbers
+Task 4. Operations with a Book Collection

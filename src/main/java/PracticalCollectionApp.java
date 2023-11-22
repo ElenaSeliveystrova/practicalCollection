@@ -5,54 +5,54 @@ public class PracticalCollectionApp {
 
 
     public static void main(String[] args) {
-        //1.1
-        System.out.println("Enter string 1");
-        String string1 = SCANNER.nextLine();
-        System.out.println("Enter string 2");
-        String string2 = SCANNER.nextLine();
-        System.out.println(equalString(string1, string2));
-
-        //1.2
-        System.out.println("Enter String");
-        String st = SCANNER.nextLine();
-        System.out.println("Enter index1");
-        int index1 = SCANNER.nextInt();
-        System.out.println("Enter index2");
-        int index2 = SCANNER.nextInt();
-        System.out.println(concatString(st, index1, index2));
-
-        //1.3
-        System.out.println(checkString(string1, string2));
-        // 1.4
-        String y = "Write a method that replaces all occurrences of one substring with another in a given string.";
-        System.out.println(replace(y, "a", "@"));
-        //1.5
-        String x1 = "we34fgh";
-        String x2 = "vbgkjds";
-        System.out.println(containsDigits(x1));
-        System.out.println(containsDigits(x2));
-        //1.6
-        String a = "  Write a method ";
-        System.out.println(removeSpaces(a));
-        //1.7
-        String s = "Create a method that splits a string into an array of substrings according to a given delimiter.";
-        System.out.println(Arrays.toString(splitString(s, "a")));
-
-        //2
-        Rectangle rectangle = new Rectangle(4, 2);
-        System.out.println("height " + rectangle.getHeight() + "\n"
-                + "width " + rectangle.getWidth() + "\n"
-                + "diagonal " + rectangle.getDiagonal() + "\n"
-                + "area " + rectangle.calculateArea() + "\n"
-                + "perimeter " + rectangle.calculatePerimeter() + "\n");
-
-        rectangle.setWidth(6);
-        rectangle.setHeight(4);
-        System.out.println("New height " + rectangle.getHeight() + ". New width " + rectangle.getWidth());
+//        //1.1
+//        System.out.println("Enter string 1");
+//        String string1 = SCANNER.nextLine();
+//        System.out.println("Enter string 2");
+//        String string2 = SCANNER.nextLine();
+//        System.out.println(equalString(string1, string2));
+//
+//        //1.2
+//        System.out.println("Enter String");
+//        String st = SCANNER.nextLine();
+//        System.out.println("Enter index1");
+//        int index1 = SCANNER.nextInt();
+//        System.out.println("Enter index2");
+//        int index2 = SCANNER.nextInt();
+//        System.out.println(concatString(st, index1, index2));
+//
+//        //1.3
+//        System.out.println(checkString(string1, string2));
+//        // 1.4
+//        String y = "Write a method that replaces all occurrences of one substring with another in a given string.";
+//        System.out.println(replace(y, "a", "@"));
+//        //1.5
+//        String x1 = "we34fgh";
+//        String x2 = "vbgkjds";
+//        System.out.println(containsDigits(x1));
+//        System.out.println(containsDigits(x2));
+//        //1.6
+//        String a = "  Write a method ";
+//        System.out.println(removeSpaces(a));
+//        //1.7
+//        String s = "Create a method that splits a string into an array of substrings according to a given delimiter.";
+//        System.out.println(Arrays.toString(splitString(s, "a")));
+//
+//        //2
+//        Rectangle rectangle = new Rectangle(4, 2);
+//        System.out.println("height " + rectangle.getHeight() + "\n"
+//                + "width " + rectangle.getWidth() + "\n"
+//                + "diagonal " + rectangle.getDiagonal() + "\n"
+//                + "area " + rectangle.calculateArea() + "\n"
+//                + "perimeter " + rectangle.calculatePerimeter() + "\n");
+//
+//        rectangle.setWidth(6);
+//        rectangle.setHeight(4);
+//        System.out.println("New height " + rectangle.getHeight() + ". New width " + rectangle.getWidth());
 
         //3
         int givenNumber = 67;
-        numberCollections(givenNumber);
+        RandomNumbersList.numberCollections(20, givenNumber);
 
         //4
         OperationWithBooks.allMethodsBooks();
@@ -102,30 +102,6 @@ public class PracticalCollectionApp {
         return string.split(delimiter);
     }
 
-    // task 3
-    public static void numberCollections(int givenNumber) {
-        int capacity = 20;
-        List<Integer> numbers = new ArrayList<>(capacity);
-        Random random = new Random();
-        for (int i = 0; i < capacity; i++) {
-            numbers.add(random.nextInt(1, 100));
-        }
-        System.out.println(numbers);
 
-        int minValue = Collections.min(numbers);
-        int maxValue = Collections.max(numbers);
-        System.out.println("min " + minValue + "\n" + "max " + maxValue);
-
-        numbers.stream().mapToDouble(Integer::intValue).average().ifPresent(System.out::println);
-
-        numbers.removeIf(n -> (n % 2) == 0);
-        System.out.println(numbers);
-
-        System.out.println(numbers.contains(givenNumber));
-
-        numbers.sort(Comparator.naturalOrder());
-        System.out.println(numbers);
-
-    }
 
 }

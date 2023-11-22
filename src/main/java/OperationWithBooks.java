@@ -10,7 +10,7 @@ public class OperationWithBooks {
         Book book2 = new Book("Khlopchyk-zirka", "Uald Oskar", genre1, 1888);
         Book book3 = new Book("Leliia", "Lesia Ukrainka", genre1, 1891);
         Book book4 = new Book("Vbyty legko", "Agata Cristy", genre2, 1939);
-        List<Book> booksList = List.of(book1, book2, book3, book4);
+        List<Book> booksList = new ArrayList<>(List.of(book1, book2, book3, book4));
         //4.1
         System.out.println(getAuthorsOfBooks(booksList));
         //4.2
