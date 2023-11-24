@@ -18,11 +18,21 @@ public class RandomNumbersList {
     }
 
     public static Integer getMax(List<Integer> numbers) {
-        return Collections.max(numbers);
+        if (!numbers.isEmpty()) {
+            return Collections.max(numbers);
+        } else {
+            System.out.println("Random numbers List is empty!!!");
+            return 0;
+        }
     }
 
     public static Integer getMin(List<Integer> numbers) {
-        return Collections.min(numbers);
+        if (!numbers.isEmpty()) {
+            return Collections.min(numbers);
+        } else {
+            System.out.println("Random numbers List is empty!!!");
+            return 0;
+        }
     }
 
     public static List<Integer> sortNumbers(List<Integer> numbers) {

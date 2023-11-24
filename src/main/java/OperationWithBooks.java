@@ -59,16 +59,16 @@ public class OperationWithBooks {
         return books.stream().filter(book -> book.getYear() == year).collect(Collectors.toList());
     }
 
-    private static List<Book> getBooksByGenre(List<Book> booksList, String genre) {
+    public static List<Book> getBooksByGenre(List<Book> booksList, String genre) {
         return booksList.stream().filter(book -> book.getGenre().equals(genre)).collect(Collectors.toList());
     }
 
-    private static String removeBooksByAuthor(List<Book> booksList, String author) {
+    public static String removeBooksByAuthor(List<Book> booksList, String author) {
 
         return booksList.removeIf(book -> book.getAuthor().equals(author)) ? "Author " + author +  "was removed" : "Author not found!";
     }
 
-    private static List<Book> sortByCriteria(List<Book> booksList, String sortCriteria) {
+    public static List<Book> sortByCriteria(List<Book> booksList, String sortCriteria) {
 
         Map<String, Comparator<Book>> map = Map.of(
                 "title", Comparator.comparing(Book::getTitle),
@@ -78,11 +78,11 @@ public class OperationWithBooks {
         return booksList;
     }
 
-    private static List<Book> mergeBookCollections(List<Book> booksList, List<Book> booksList1){
+    public static List<Book> mergeBookCollections(List<Book> booksList, List<Book> booksList1){
         return Stream.of(booksList, booksList1).flatMap(Collection::stream).collect(Collectors.toList());
     }
 
-    private static List<Book> subcollectionOfBookByGenre(List<Book> booksList, String genre){
+    public static List<Book> subcollectionOfBookByGenre(List<Book> booksList, String genre){
         return booksList.stream().filter(book -> book.getGenre().equals(genre)).collect(Collectors.toList());
     }
 }
