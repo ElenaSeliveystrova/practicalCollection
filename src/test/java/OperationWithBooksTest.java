@@ -22,23 +22,18 @@ public class OperationWithBooksTest {
     private static final String author5 = "Taras Shevchenko";
     private static final String author6 = "Jack London";
     private static final String author7 = "O'Genry";
-    private static final int year1 = 1899;
-    private static final int year2 = 1888;
-    private static final int year3 = 1891;
-    private static final int year4 = 1939;
-    private static final int year5 = 1905;
-    private static final int year6 = 1840;
+    private static final int yearSearch = 1905;
     private static List<Book> bookList;
     private final List<String> emptyList = new ArrayList<>();
 
-    private static final Book book1 = new Book("Farbovanyy lys", author2, genre2, year1);
-    private static final Book book2 = new Book("Khlopchyk-zirka", author3, genre2, year2);
-    private static final Book book3 = new Book("Leliia", author1, genre2, year3);
-    private static final Book book4 = new Book("Vbyty legko", author4, genre3, year4);
-    private static final Book book5 = new Book("Moysey", author2, genre1, year5);
-    private static final Book book6 = new Book("Kobzar", author5, genre1, year6);
-    private static final Book book7 = new Book("White Fang", author6, "story", year5);
-    private static final Book book8 = new Book("Gifts of the Magi", author7, "novel", year5);
+    private static final Book book1 = new Book("Farbovanyy lys", author2, genre2, 1899);
+    private static final Book book2 = new Book("Khlopchyk-zirka", author3, genre2, 1888);
+    private static final Book book3 = new Book("Leliia", author1, genre2, 1891);
+    private static final Book book4 = new Book("Vbyty legko", author4, genre3, 1939);
+    private static final Book book5 = new Book("Moysey", author2, genre1, yearSearch);
+    private static final Book book6 = new Book("Kobzar", author5, genre1, 1840);
+    private static final Book book7 = new Book("White Fang", author6, "story", yearSearch);
+    private static final Book book8 = new Book("Gifts of the Magi", author7, "novel", yearSearch);
 
 
     @BeforeEach
@@ -66,7 +61,7 @@ public class OperationWithBooksTest {
     @Test
     public void getAuthorsByYearTest() {
         List<String> authorsExpected = new ArrayList<>(List.of(author2, author6, author7));
-        assertEquals(authorsExpected, OperationWithBooks.getAuthorsByYear(bookList, year5));
+        assertEquals(authorsExpected, OperationWithBooks.getAuthorsByYear(bookList, yearSearch));
     }
 
     @Test
@@ -86,7 +81,7 @@ public class OperationWithBooksTest {
 
     @Test
     public void getBooksByYearTest() {
-        assertEquals(3, OperationWithBooks.getBooksByYear(bookList, year5).size());
+        assertEquals(3, OperationWithBooks.getBooksByYear(bookList, yearSearch).size());
     }
 
     @Test
@@ -134,7 +129,7 @@ public class OperationWithBooksTest {
     @Test
     public void mergeBookCollectionsTest() {
         Book b = new Book("36 i 6 kotiv", "Galina Vdovichenko", genre3, 2015);
-        Book b2 = new Book("Natalka Poltavka", "Ivan Kotlarevskiy", "dram", 1819);
+        Book b2 = new Book("Natalka Poltavka", "Ivan Kotlarevskiy", "drama", 1819);
         List<Book> bookList2 = new ArrayList<>(List.of(b, b2));
         List<Book> expectedList = new ArrayList<>(bookList);
         expectedList.add(b);
