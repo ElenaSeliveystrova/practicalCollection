@@ -3,7 +3,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class OperationWithBooks {
-    public static void allMethodsBooks(){
+    public static void allMethodsBooks() {
         String genre1 = "Fairy tale";
         String genre2 = "Detective";
         Book book1 = new Book("Farbovanyy lys", "Ivan Franko", genre1, 1899);
@@ -38,6 +38,7 @@ public class OperationWithBooks {
         //4.10
         System.out.println(subcollectionOfBookByGenre(bookList3, genre1));
     }
+
     // task 4
     public static List<String> getAuthorsOfBooks(List<Book> books) {
         return books.stream().map(Book::getAuthor).collect(Collectors.toList());
@@ -64,8 +65,7 @@ public class OperationWithBooks {
     }
 
     public static String removeBooksByAuthor(List<Book> booksList, String author) {
-
-        return booksList.removeIf(book -> book.getAuthor().equals(author)) ? "Author " + author +  "was removed" : "Author not found!";
+        return booksList.removeIf(book -> book.getAuthor().equals(author)) ? "Author " + author + " was removed" : "Author not found!";
     }
 
     public static List<Book> sortByCriteria(List<Book> booksList, String sortCriteria) {
@@ -78,11 +78,11 @@ public class OperationWithBooks {
         return booksList;
     }
 
-    public static List<Book> mergeBookCollections(List<Book> booksList, List<Book> booksList1){
+    public static List<Book> mergeBookCollections(List<Book> booksList, List<Book> booksList1) {
         return Stream.of(booksList, booksList1).flatMap(Collection::stream).collect(Collectors.toList());
     }
 
-    public static List<Book> subcollectionOfBookByGenre(List<Book> booksList, String genre){
+    public static List<Book> subcollectionOfBookByGenre(List<Book> booksList, String genre) {
         return booksList.stream().filter(book -> book.getGenre().equals(genre)).collect(Collectors.toList());
     }
 }

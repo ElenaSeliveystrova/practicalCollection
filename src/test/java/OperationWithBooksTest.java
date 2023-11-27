@@ -91,8 +91,8 @@ public class OperationWithBooksTest {
 
     @Test
     public void getBooksByGenreTest() {
-        List<Book> authorsExpected = new ArrayList<>(List.of(book1, book2, book3));
-        assertEquals(authorsExpected, OperationWithBooks.getBooksByGenre(bookList, genre2));
+        List<Book> booksExpected = new ArrayList<>(List.of(book1, book2, book3));
+        assertEquals(booksExpected, OperationWithBooks.getBooksByGenre(bookList, genre2));
         assertEquals(3, OperationWithBooks.getBooksByGenre(bookList, genre2).size());
     }
 
@@ -103,14 +103,16 @@ public class OperationWithBooksTest {
 
     @Test
     public void removeBooksByAuthorTest() {
-        String expected = "Author " + author4 + "was removed";
+        String expected = "Author " + author4 + " was removed";
         assertEquals(expected, OperationWithBooks.removeBooksByAuthor(bookList, author4));
+        assertFalse(bookList.stream().anyMatch(book -> book.getAuthor().equals(author4)));
     }
 
     @Test
     public void removeBooksByAuthorNotFoundTest() {
         String expected = "Author not found!";
         assertEquals(expected, OperationWithBooks.removeBooksByAuthor(bookList, "Nechuy Levitskiy"));
+        assertEquals(8, bookList.size());
     }
 
     public static Stream<Arguments> criteriaAndListProvider() {
